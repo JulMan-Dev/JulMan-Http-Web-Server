@@ -2,8 +2,14 @@
     "compileOnSave": true,
     "compilerOptions": {
         "target": "ES6",
-        "module": "CommonJS",
+        "module": "CommonJS",        
         "sourceMap": true,
+        "listFiles": true,
+        "lib": [
+            "ES2018.Promise",
+            "ES2018.AsyncGenerator",
+            "ES2018.AsyncIterable",
+        ],
         "outDir": "out",
         "moduleResolution": "Node"
     }

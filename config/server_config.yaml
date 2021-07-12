@@ -1,0 +1,28 @@
+httpOptions:
+  # Change here the port used by the server (can also be change using "--port" parameter)
+  port: 80
+
+pluginsOptions:
+  # Switch if externals plugins will be loaded
+  loadPlugins: true
+  # Backlist here all plugins where name match with this list
+  backlistPluginsNames:
+    - "*http*"
+
+# Require absolute path for show page (only for index.html and servers scripts)
+requireAbsulutePath: false
+# Allow server scripts's execution, if false, display 404 page
+executeServerScripts: true
+# Allow server scripts's execution in file (excepted .server.js), if false, replaced by "?"
+executeServerScriptsFileWidget: true
+serverScriptsOptions:
+  # Allow server scripts to read/write/delete files
+  allowFilesystem: true
+  # Allow server scripts to execute others scripts (allow "require()")
+  allowOtherScriptsExecution: true
+errorPage:
+  # Values :
+  #  0 -> Auto generated page
+  #  Starts with "/" -> Relative path
+  404: 0
+  500: 0

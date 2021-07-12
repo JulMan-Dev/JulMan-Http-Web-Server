@@ -20,6 +20,7 @@ export class Plugin {
                 if (!fs.existsSync(`./plugins/${this.pluginInfos.name}/${script}`)) {
                     throw `PluginScriptMissing: The script "${script}" for "${this.pluginInfos.name} missing`;
                 }
+                console.log(`Found plugin script "./plugins/${this.pluginInfos.name}/${script}" !`);
             });
 
             return this.pluginInfos.scripts.map((v) => `./plugins/${v}`);
