@@ -2,11 +2,10 @@ import * as fs from 'fs';
 import * as http from 'http';
 import * as ws from 'ws';
 import * as yaml from 'js-yaml';
+import * as fetch from 'node-fetch';
 
 import * as pluginLoader from './plugins';
 import * as utils from './utils';
-
-const fetch = require('node-fetch').default;
 
 export const serverConfig: import('./types').ServerConfig = Object(yaml.load(fs.readFileSync('./config/server_config.yaml', 'utf-8')));
 
@@ -14,7 +13,7 @@ const AsyncFunction: new (...args: string[]) => (...args: any[]) => Promise<any>
 
 let serverInfos = {
     port: process.argv.includes('--port') ? process.argv[process.argv.indexOf('--port') + 1] : serverConfig.httpOptions.port,
-    hostname: '127.0.0.1',
+    hostname: 'localhost'
 }
 
 serverConfig.pluginsOptions.loadPlugins ? pluginLoader.loadAllModules() : null;
@@ -126,8 +125,8 @@ const server = http.createServer(async (req, res) => {
     res.write(res_);
 });
 
-server.listen(serverInfos.port, () => {
-    console.log(`Server ready on "localhost:${serverInfos.port}"`);
+server.listen(serverInfos.port, async () => {
+    console.log(`Server ready on "${serverInfos.hostname = await (await fetch.default('https://api.ipify.org/')).text()}:${serverInfos.port}"`);
 });
 
 server.on('close', () => {
