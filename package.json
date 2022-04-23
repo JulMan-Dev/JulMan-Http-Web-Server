@@ -19,7 +19,7 @@
   "dependencies": {
     "canvas": "^2.8.0",
     "js-yaml": "^4.1.0",
-    "node-fetch": "^2.6.1",
+    "node-fetch": "^2.6.7",
     "ws": "^7.5.2"
   },
   "devDependencies": {
