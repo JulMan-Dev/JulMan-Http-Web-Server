@@ -20,7 +20,7 @@
     "canvas": "^2.8.0",
     "js-yaml": "^4.1.0",
     "node-fetch": "^2.6.1",
-    "ws": "^7.5.2"
+    "ws": "^8.17.1"
   },
   "devDependencies": {
     "typescript": "^4.9.5",
